@@ -41,7 +41,7 @@
 |          Имя          |      tg       |GitHub            |
 |-----------------------|---------------|------------------|
 |**Ева Неудачина (куратор)**|[**@cocosinca**](http://t.me/cocosinca)  |[neudachina](https://github.com/neudachina)|
-|        Богдан         |[@ghfsbdsn](http://t.me/ghfsbdsn)            |[HerrVonBeloff](https://github.com/HerrVonBeloff)|
+|        Богдан         |[@ghfsbdns](http://t.me/ghfsbdns)            |[HerrVonBeloff](https://github.com/HerrVonBeloff)|
 |        Антон          |[@beda3113](http://t.me/beda3113)            |[Beda3113](https://github.com/Beda3113)|
 |      Александр        |[@AlexAetM](http://t.me/AlexAetM)            |[GandlinAlexandr](https://github.com/GandlinAlexandr)|
 |        Роман          |[@OleynikovRoman](http://t.me/OleynikovRoman)|[roleynikov](https://github.com/roleynikov)|
