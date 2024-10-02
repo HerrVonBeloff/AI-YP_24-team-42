@@ -24,7 +24,7 @@
 
 ## Технологии
 
-Для реализации проекта использовались следующие технологии:
+Для реализации проекта используются следующие технологии:
 
 * [![Colab][Colab]][Colab-url]
 * [![Python][Python.org]][Python-url]
@@ -32,7 +32,9 @@
   * [![Numpy][Numpy.org]][Numpy-url]
   * [![Pandas][Рandas.pydata.org]][Pandas-url]
   * [![scikit-learn][scikit-learn]][scikit-learn-url]
+  * ...
 * [![telegram][telegram]][telegram-url]
+* ...
 
 ## Участники проекта
 
