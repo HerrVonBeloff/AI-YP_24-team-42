@@ -25,7 +25,7 @@
 |**Ева Неудачина (куратор)**|**@cocosinca**| neudachina|
 |        Богдан         | @ghfsbdsn     |HerrVonBeloff|
 |        Антон          |@beda3113      |Beda3113|
-|      Александр        |@AlexAetM      |GandlinAlexandr|
+|      Александр        |@AlexAetM      |[GandlinAlexandr](https://github.com/GandlinAlexandr)|
 |        Роман          |@OleynikovRoman|roleynikov|
 
 ---
