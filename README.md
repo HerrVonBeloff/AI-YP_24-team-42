@@ -19,7 +19,7 @@
       <a href="#данные">Данные</a>
     </li>
     <li>
-      <a href="#eda">Участники проекта</a>
+      <a href="#eda">EDA</a>
     </li>
   </ol>
 </details>
