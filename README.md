@@ -46,9 +46,9 @@
   * [![AIOgram][AIOgram]][AIOgram-url]
   * [![Numpy][Numpy.org]][Numpy-url]
   * [![Pandas][Рandas.pydata.org]][Pandas-url]
+  * [![Pytorch][Pytorch]][Pytorch-url]
   * [![scikit-learn][scikit-learn]][scikit-learn-url]
   * [![Spacy][SpaCy]][Spacy-url]
-  * [![Pytorch][Pytorch]][Pytorch-url]
   * ...
 * [![telegram][telegram]][telegram-url]
 * ...
