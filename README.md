@@ -1,3 +1,4 @@
+[![MIT][license-shield]][license-url]
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
 [!['Black'](https://img.shields.io/badge/code_style-black-black?style=for-the-badge)](https://github.com/psf/black)
 
@@ -147,4 +148,7 @@
 
 [Pytorch-url]: https://pytorch.org/
 [Pytorch]: https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white
+
+[license-shield]: https://img.shields.io/github/license/HerrVonBeloff/AI-YP_24-team-42.svg?style=for-the-badge
+[license-url]: https://github.com/HerrVonBeloff/AI-YP_24-team-42/blob/main/LICENSE
 
