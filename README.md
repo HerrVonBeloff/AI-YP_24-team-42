@@ -79,6 +79,8 @@
 
 <div align="center">
 
+##### Список участников проекта
+  
 |          Имя          |      tg       |GitHub            |
 |-----------------------|---------------|------------------|
 |**Ева Неудачина (куратор)**|[**@cocosinca**](http://t.me/cocosinca)  |[**neudachina**](https://github.com/neudachina)|
