@@ -38,6 +38,10 @@
         <ul>
         <li><a href="#api">API</a></li>
         <li><a href="#streamlit">Streamlit</a></li>
+            <ul><li><a href="#генерация-изображений">Генерация изображений</a></li></ul>
+            <ul><li><a href="#краткая-информация-о-модели">Краткая информация о модели</a></li></ul>
+            <ul><li><a href="#загрузка-датасета">Загрузка датасета</a></li></ul>
+            <ul><li><a href="#eda">EDA</a></li></ul>
         </ul>
   </ol>
 </details>
@@ -56,11 +60,15 @@
 * [![Kaggle][Kaggle]][Kaggle-url]
 * [![Python][Python.org]][Python-url]
   * [![AIOgram][AIOgram]][AIOgram-url]
+  * [![Matplotlib][Matplotlib.org]][Matplotlib-url]
   * [![Numpy][Numpy.org]][Numpy-url]
   * [![Pandas][Рandas.pydata.org]][Pandas-url]
   * [![Pytorch][Pytorch]][Pytorch-url]
   * [![scikit-learn][scikit-learn]][scikit-learn-url]
   * [![Spacy][SpaCy]][Spacy-url]
+  * [![Seaborn][Seaborn-badge]][Seaborn-url]
+  * [![Streamlit][StreamlitBadge]][Streamlit-url]
+  * 
   * ...
 * [![telegram][telegram]][telegram-url]
 * ...
@@ -141,6 +149,53 @@
 
 ### Streamlit
 
+Streamlit-приложение выполняет следующие функции: проаверяет работу нашей модели, генерируя четыре изображения по текстовому запросу пользователя; выдаёт краткую информацию о модели и её обучении; позволяет загружать датасет, аналгогичный тому, который использовался при обуучении для его анализа. Любую из секций в приложении можно свернуть и развернуть, чтобы пользователю не приходилось прокручивать длинную ленту web-приложения. При нажатии любой из кнопок в приложении осталльные секции не обновляются, не сворачиваются и не откатываются, сохраняя предыдущее состояение, чтобы пользователю не приходилось перезапускать каждую из них заново.
+
+#### Генерация изображений
+
+Осуществляется после ввода текстового описания изображения в специальное поле и нажатия соотвествующей кнопки.
+
+#### Краткая информация о модели
+
+Даёт краткую справку о модели, выводит интерактивные графики для значений потерь и метрики FID, даётся ссылка на репозиторий для ознакомления с боле подробной информацией и кодом проекта. Пользователь мложет выбрать цветовую тему для интерактивных графиков из выпаждающего меню в данном разделе.
+
+#### Загрузка датасета
+
+Позволяет загружать датасет формата `parquet`, аналогичный тому, что использовался при обучении моделей, в Streamlit-приложение для анализа данных. Датасет должен состоять минимум из двух колонок с названиями `image` и `text`, в которых ханятся изображения и их текстовое описание соответственно. При этом изображение в каждом объекте должно быть представлено в виде словаря с ключом `'bytes'`, по которому содержится изображение в байтовом представлении. 
+
+<div align="center">
+  
+##### Описание формата датасета
+
+| | image | text |
+|-|-------------|-------------|
+|456| {'bytes': b'\x89PNG\r\n\x1a\n\x00\...'}    | Simple elegant logo for Concept, love orange ... |
+
+</div>
+
+После загрузки датасета появляется кнопка `Получите случайный элемент датасета`, при нажатии на которую выводится случайный логотип из датасета и его текстовое описание с указанием индекса.
+
+Пример датасета, который представляет собой срез обучающей выборки для нашей модели, представленный двумя тысячами его последних элеметов, можно скачать по [ссылке](https://drive.google.com/file/d/1BiUi9TOVgIjEggFQHb9d49Dp-z0pgIvI/view?usp=sharing). Ссылка на пример датасета и описание требований к нему даны и в самом web-приложении.
+
+#### EDA
+
+Выводит анализ данных загруженного датасета. Кнопка `EDA` появляется только после загрузки датасета в Streamlit-приложение. Выводит следующие графики:
+* Анализ текстовых данных
+  * Облако слов
+  * Гистограмма распределения длин описаний (в символах)
+  * Boxplot для длин описаний
+  * Гистограмма количества эпитетов в описании
+  * Boxplot для количества эпитетов
+* Анализ изображений
+  * Соотношение RGB и чёрно-белых логотипов (круговая диаграмма)
+  * Высота изображений (гистограмма)
+  * Ширина изображений (гистограмма)
+  * Соотношение сторон (гистограмма)
+  * Соотношение сторон (без квадратных изображений, гистограмма)
+  * Количество пикселей (гистограмма)
+
+Данныне графики дают начальное представление о данных и позволяют наметить первые шаги к их предобработке. Каждый график, кроме облака слов, является интерактивным. Для каждой гистограммы можно настроить количество бинов для удобства восприятия пользователя. Помимо этого, предоставляется выподающее меню, позволяющее выбрать цветовую тему для интерактивных графиков из списка тем библиотеки `plotly`.
+
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
 
@@ -170,12 +225,21 @@
 [Kaggle-url]: https://www.kaggle.com/
 [Kaggle]: https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white
 
+[license-shield]: https://img.shields.io/github/license/HerrVonBeloff/AI-YP_24-team-42.svg?style=for-the-badge
+[license-url]: https://github.com/HerrVonBeloff/AI-YP_24-team-42/blob/main/LICENSE
+
+[Matplotlib-url]: https://matplotlib.org/
+[Matplotlib.org]: https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black
+
 [Spacy-url]: https://spacy.io/
 [Spacy]: https://img.shields.io/badge/-spaCy-09A3D5?style=for-the-badge&logo=spacy&logoColor=white
 
 [Pytorch-url]: https://pytorch.org/
 [Pytorch]: https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white
 
-[license-shield]: https://img.shields.io/github/license/HerrVonBeloff/AI-YP_24-team-42.svg?style=for-the-badge
-[license-url]: https://github.com/HerrVonBeloff/AI-YP_24-team-42/blob/main/LICENSE
+[Seaborn-url]: https://seaborn.pydata.org/
+[Seaborn-badge]: https://img.shields.io/badge/Seaborn-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=blue
+
+[StreamlitBadge]: https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white
+[Streamlit-url]: https://streamlit.io/
 
