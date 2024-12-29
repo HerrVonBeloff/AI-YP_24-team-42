@@ -71,6 +71,7 @@ def dataset_to_eda(df):
     dataset_transform["pixel"] = dataset_transform["shape"].apply(lambda x: np.prod(x))
     return dataset_transform
 
+
 st.title("Генерация логотипа по текстовому описанию")
 
 description = st.text_input("Введите описание логотипа:")
@@ -79,13 +80,11 @@ if st.button("Сгенерировать логотип"):
     if description:
         generated_images = []
         for i in range(4):
-            payload = {
-                "description": description
-            }
+            payload = {"description": description}
             response = requests.post(api_url, json=payload)
             if response.status_code == 200:
                 # Конвертация изображения из байтов
-                response_list =  response.json()
+                response_list = response.json()
                 pixel_data = np.array(response_list["image"], dtype=np.uint8)
                 generate_image = Image.fromarray(pixel_data)
                 generated_images.append(generate_image)
