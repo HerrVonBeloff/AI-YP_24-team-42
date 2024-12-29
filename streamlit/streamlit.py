@@ -1,9 +1,6 @@
 import streamlit as st
-import spacy
-import torch
 import numpy as np
 from PIL import Image
-from models import Generator, TextTransformer
 import random
 import pandas as pd
 from io import BytesIO
@@ -13,8 +10,11 @@ from wordcloud import WordCloud
 import logging
 from logging.handlers import RotatingFileHandler
 import os
+import requests
 
-# ЛОГГИРОВАНИЕ
+api_url = "http://127.0.0.1:8000/generate/"
+
+# ОЧЕНЬ СКРОМНОЕ ЛОГГИРОВАНИЕ
 # Создание папки
 os.makedirs("logs", exist_ok=True)
 
@@ -32,7 +32,7 @@ log_handler = RotatingFileHandler(
 log_handler.setFormatter(log_formatter)
 
 logger = logging.getLogger("MyAppLogger")
-logger.setLevel(logging.DEBUG)  # Уровни: DEBUG, INFO, WARNING, ERROR, CRITICAL
+logger.setLevel(logging.DEBUG)
 logger.addHandler(log_handler)
 
 if "eda_clicked" not in st.session_state:
@@ -53,52 +53,23 @@ themes = [
 ]
 
 
-def dataset_to_EDA(df):
-    dataset_for_EDA = pd.DataFrame(columns=[])
-    dataset_for_EDA["epitets_num"] = df["text"].apply(lambda x: len(x.split(",")[1:]))
-    dataset_for_EDA["description"] = df["text"].apply(
+def dataset_to_eda(df):
+    dataset_transform = pd.DataFrame(columns=[])
+    dataset_transform["epitets_num"] = df["text"].apply(lambda x: len(x.split(",")[1:]))
+    dataset_transform["description"] = df["text"].apply(
         lambda x: ",".join(x.split(",")[1:])
     )
-    dataset_for_EDA["len"] = df["text"].apply(lambda x: len(x))
+    dataset_transform["len"] = df["text"].apply(lambda x: len(x))
 
-    dataset_for_EDA["shape"] = df["image"].apply(lambda x: np.array(x).shape)
-    dataset_for_EDA["h"] = df["image"].apply(lambda x: np.array(x).shape[0])
-    dataset_for_EDA["w"] = df["image"].apply(lambda x: np.array(x).shape[1])
-    dataset_for_EDA["rgb"] = df["image"].apply(
+    dataset_transform["shape"] = df["image"].apply(lambda x: np.array(x).shape)
+    dataset_transform["h"] = df["image"].apply(lambda x: np.array(x).shape[0])
+    dataset_transform["w"] = df["image"].apply(lambda x: np.array(x).shape[1])
+    dataset_transform["rgb"] = df["image"].apply(
         lambda x: "RGB" if len(np.array(x).shape) == 3 else "BW"
     )
-    dataset_for_EDA["ratio"] = dataset_for_EDA["shape"].apply(lambda x: x[0] / x[1])
-    dataset_for_EDA["pixel"] = dataset_for_EDA["shape"].apply(lambda x: np.prod(x))
-    return dataset_for_EDA
-
-
-spacy.prefer_gpu()
-nlp = spacy.load("en_core_web_md")
-
-# Подготовка генератора
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-generator = Generator(z_dim=100).to(device)
-generator.load_state_dict(
-    torch.load(r"generator_15.pth", weights_only=True, map_location=device)
-)
-generator.eval()
-
-
-def preprocess_text(text):
-    z_dim = 100
-    random_data = torch.randn(1, z_dim)
-    text_transformer = TextTransformer(nlp_model=nlp)
-    text_vector = text_transformer.transform(text)
-    z = torch.cat((random_data, text_vector), dim=1)
-    return z
-
-
-# Преобразование тензора в изображение
-def postprocess_output(output):
-    image = (output.cpu().detach().numpy().squeeze(0) * 255).astype("uint8")
-    image = np.transpose(image, (1, 2, 0))
-    return image
-
+    dataset_transform["ratio"] = dataset_transform["shape"].apply(lambda x: x[0] / x[1])
+    dataset_transform["pixel"] = dataset_transform["shape"].apply(lambda x: np.prod(x))
+    return dataset_transform
 
 st.title("Генерация логотипа по текстовому описанию")
 
@@ -106,22 +77,23 @@ description = st.text_input("Введите описание логотипа:")
 
 if st.button("Сгенерировать логотип"):
     if description:
-        try:
-            generated_images = []
-            for i in range(4):
-                input_tensor = preprocess_text(description)
-
-                with torch.no_grad():
-                    output = generator(input_tensor.to(device))
-                image = postprocess_output(output)
-                generate_image = Image.fromarray(image)
+        generated_images = []
+        for i in range(4):
+            payload = {
+                "description": description
+            }
+            response = requests.post(api_url, json=payload)
+            if response.status_code == 200:
+                # Конвертация изображения из байтов
+                response_list =  response.json()
+                pixel_data = np.array(response_list["image"], dtype=np.uint8)
+                generate_image = Image.fromarray(pixel_data)
                 generated_images.append(generate_image)
-
-            st.session_state.generate_image = generated_images
-            st.session_state.description = description
-        except Exception as e:
-            st.error(f"Ошибка: {e}")
-            logger.error(f"Ошибка генерации: {e}")
+            else:
+                logger.error(f"Ошибка при подключении к API: {response.status_code}")
+                st.write("Ошибка при подключении к API")
+        st.session_state.generate_image = generated_images
+        st.session_state.description = description
     else:
         st.warning("Пожалуйста, введите описание.")
 
@@ -290,8 +262,8 @@ if uploaded_file is not None:
         if st.button("EDA"):
             st.session_state.eda_clicked = True
             try:
-                dataset_for_EDA = dataset_to_EDA(dataset)
-                st.session_state.dataset_for_EDA = dataset_for_EDA
+                dataset_for_eda = dataset_to_eda(dataset)
+                st.session_state.dataset_for_EDA = dataset_for_eda
             except Exception as e:
                 st.error(f"Ошибка данных датасета: {e}")
                 logger.error(f"Ошибка форматирования датасета: {e}")
