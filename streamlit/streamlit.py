@@ -12,7 +12,7 @@ from logging.handlers import RotatingFileHandler
 import os
 import requests
 
-api_url = "http://127.0.0.1:8000/generate/"
+api_url = "http://backend:8000/generate/"
 
 # ОЧЕНЬ СКРОМНОЕ ЛОГГИРОВАНИЕ
 # Создание папки
