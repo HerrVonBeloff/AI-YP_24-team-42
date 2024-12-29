@@ -36,6 +36,7 @@
       <a href="#сервис">Сервис</a>
     </li>
         <ul>
+        <li><a href="#docker">Docker</a></li>
         <li><a href="#api">API</a></li>
         <li><a href="#streamlit">Streamlit</a></li>
             <ul><li><a href="#генерация-изображений">Генерация изображений</a></li></ul>
