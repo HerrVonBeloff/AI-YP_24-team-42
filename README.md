@@ -159,11 +159,13 @@ sudo docker-compose logs
 ```
 В ходе выполнения команды будет выведена информация с ссылками на streamlit приложение:
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/e62d1034-ce2e-449f-b6e1-9abb029533b0" alt="Адрес Streamlit приложения">
-  <p><i>Адрес Streamlit приложения</i></p>
-</div>
-
+```
+streamlit   |  You can now view your Streamlit app in your browser.
+streamlit   |
+streamlit   |  Local URL: http://localhost:8501
+streamlit   |  Network URL: http://172.19.0.3:8501
+streamlit   |  External URL: http://95.24.77.148:8501
+```
 Документацию FastApi можно будет посмотреть по адресу: <http://localhost:8000/docs>
 
    
