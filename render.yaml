@@ -3,4 +3,4 @@ services:
     name: ai-yp-24-team-42
     env: docker
     plan: free
-    dockerComposeFilePath: docker-compose.yml
+    dockerComposeFilePath: docker-compose_1.yml
