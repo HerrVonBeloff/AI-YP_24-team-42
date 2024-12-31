@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: ai-yp-24-team-42
+    env: docker
+    plan: free
+    dockerComposeFilePath: docker-compose.yml
+    healthCheckPath: /
