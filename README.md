@@ -284,6 +284,61 @@ Kibana          |  [External URL: http://95.24.77.148:8501](http://localhost:560
 
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
+
+### Развертывание сервера на платформе [Selectel.ru](https://my.selectel.ru/vpc)
+
+Проект был успешно развернут на созданном сервере компании Selectel, предоставляющей облачные инфраструктурные сервисы и услуги дата-центров. Ниже представлены основные этапы развертывания сервера:
+
+#### Этапы развертывания сервера
+
+##### Разработка онлайн-сервера в конструкторе, подбор оптимальных параметров сервера.
+Используя конструктор серверов от Selectel, был разработан сервер, соответствующий требованиям проекта.
+ Проведен анализ и выбор оптимальных параметров сервера с учетом соотношения цена/качество. Обратите внимание, что реализация сервера является платной.
+Используя конструктор серверов от Selectel, был разработан сервер, соответствующий требованиям проекта.
+
+##### Запуск сервера
+После завершения настройки параметров, сервер был запущен и готов к дальнейшим действиям.
+
+##### Установка необходимых инструментов
+• Установка Git:
+```
+sudo apt update
+sudo apt install git    
+```
+ • Установка Docker:
+```
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update   
+``` 
+##### Клонирование проекта из Git на сервер 
+``` 
+git clone https://github.com/HerrVonBeloff/AI-YP_24
+```
+##### Запуск Docker-билда
+``` 
+cd /HerrVonBeloff/AI-YP_24
+docker-compose up -d --build  
+```
+##### Готово!
+
+Теперь к серверу можно подключиться по следующему адресу:
+```
+http://46.161.52.173:8501/
+```
+<p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
+
+
+
+
 <!-- Раздел ссылок на сайты и миниатюры -->
 
 [Python-url]: https://python.org/
