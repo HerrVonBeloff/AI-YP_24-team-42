@@ -18,4 +18,7 @@ services:
   dockerContext: .
   dockerfilePath: Dockerfile
   rootDir: ./backend/
+  envVars:
+      - key: PORT
+        value: "8000"
 version: "1"
