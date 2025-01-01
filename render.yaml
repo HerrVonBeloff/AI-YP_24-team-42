@@ -1,14 +1,21 @@
+# Exported from Render on 2025-01-01T10:16:48Z
 services:
-  - type: web
-    name: streamlit
-    env: docker
-    plan: free
-    dockerfilePath: ./streamlit/Dockerfile
-    autoDeploy: true
-
-  - type: web
-    name: backend
-    env: docker
-    plan: free
-    dockerfilePath: ./backend/Dockerfile
-    autoDeploy: true
+- type: web
+  name: streamlit
+  runtime: docker
+  repo: https://github.com/HerrVonBeloff/AI-YP_24-team-42
+  plan: free
+  region: oregon
+  dockerContext: .
+  dockerfilePath: /Dockerfile
+  rootDir: ./streamlit
+- type: web
+  name: backend
+  runtime: docker
+  repo: https://github.com/HerrVonBeloff/AI-YP_24-team-42
+  plan: free
+  region: oregon
+  dockerContext: .
+  dockerfilePath: Dockerfile
+  rootDir: ./backend/
+version: "1"
