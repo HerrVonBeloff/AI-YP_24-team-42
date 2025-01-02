@@ -1,47 +1,9 @@
+version: '3'
 services:
-  elasticsearch:
-    image: elasticsearch:7.10.1
-    container_name: elasticsearch
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false  # Отключите безопасность
-    ports:
-      - "9200:9200"
-    volumes:
-      - esdata:/usr/share/elasticsearch/data
-    networks:
-      - app
-
-  logstash:
-    image: logstash:7.10.1
-    container_name: logstash
-    ports:
-      - "5044:5044"
-    volumes:
-      - ./logstash/pipeline:/usr/share/logstash/pipeline  # Папка с конфигурацией Logstash
-      - ./logs:/usr/share/logstash/logs  # Монтируем локальную папку для логов
-    depends_on:
-      - elasticsearch
-    networks:
-      - app
-
-  kibana:
-    image: kibana:7.10.1
-    container_name: kibana
-    ports:
-      - "5601:5601"
-    environment:
-      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200  # Укажите адрес Elasticsearch без авторизации
-    depends_on:
-      - elasticsearch
-    networks:
-      - app
-
   streamlit:
-    build: ./streamlit
-    container_name: streamlit
+    build: streamlit
     ports:
-      - "8501:8501"
+      - 8501:8501
     depends_on:
       - backend
     volumes:
@@ -49,22 +11,19 @@ services:
     restart: always
     networks:
       - app
+    container_name: streamlit
 
   backend:
-    build: ./backend
-    container_name: backend
+    build: backend
     ports: 
-      - "8000:8000"
+      - 8000:8000
     volumes:
       - ./backend:/api
     restart: always
     networks:
       - app
-
-volumes:
-  esdata:
-    driver: local
-
+    container_name: backend
 networks:
   app:
-    driver: bridge
+    driver:
+      bridge
