@@ -69,6 +69,7 @@
 Для реализации проекта используются следующие технологии:
 
 * [![Colab][Colab]][Colab-url]
+* [![Docker][DockerBadge]][Docker-url]
 * [![Kaggle][Kaggle]][Kaggle-url]
 * [![Python][Python.org]][Python-url]
   * [![AIOgram][AIOgram]][AIOgram-url]
@@ -390,3 +391,6 @@ http://46.161.52.173:8501/
 
 [StreamlitBadge]: https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white
 [Streamlit-url]: https://streamlit.io/
+
+[DockerBadge]: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
