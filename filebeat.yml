@@ -1,7 +1,0 @@
-filebeat.inputs:
-- type: log
-  paths:
-    - logstash/logs/*.log  # Укажите путь к вашим логам
-
-output.logstash:
-  hosts: ["localhost:5044"]  # Укажите адрес и порт Logstash
