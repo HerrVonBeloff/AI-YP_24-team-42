@@ -427,6 +427,8 @@ docker-compose up -d --build
 * Реализован `weight clipping` для гарантии липшицевости дискриминатора - принудительное ограничение весов.
 * WGAN-GP вместо `weight clipping` - менее жесткое ограничение для гарантии липшицевости с использованием градиентного штрафа (gradient penalty).
 
+Все эксперименты с кодом содержатся в файле [GAN_experiments.ipynb](https://github.com/HerrVonBeloff/AI-YP_24-team-42/blob/main/GAN_experiments.ipynb).
+
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
 ### Результаты экспериментов
