@@ -483,6 +483,20 @@ docker-compose up -d --build
 |LPIPS|Перцептуальное различие (насколько два изображения отличаются с точки зрения человеческого восприятия)|Чем ближе к 0, тем лучше|
 |CLIP Score|Семантическое соответствие текста и изображения|Чем выше, тем лучше|
 
+Как правило, до адаптации для генерации логотипов, модель выдавала далёкие от логотипов изображения. Обычно это были реалистичные изображения чего-либо. После адаптации модель уже выдавала нечто смутно напоминающее логотипы, иногда с внедрением отголосков фотореалистичных изображений.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7f38e181-4e32-4759-9150-9c1213a96244" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели">
+  <p><i>Примеры некоторых генераций по запросу **A futuristic logo with glowing lines and abstract shapes** после адаптации модели</i></p>
+</div>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c7ae4636-c9f3-40e7-9b60-dd04c5cf7860" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели">
+  <p><i>Пример генерации по запросу **A futuristic logo with glowing lines and abstract shapes** до адаптации модели</i></p>
+</div>
+
+
+
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
 <!-- Раздел ссылок на сайты и миниатюры -->
