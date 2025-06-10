@@ -72,7 +72,7 @@
     <a href="#диффузионные-модели">Диффузионные модели</a>
   </li>
     <ul>
-        <li><a href="#модель">модель</a></li>
+        <li><a href="#stable-diffusion-v15--lora">Stable Diffusion v1.5 + LoRA</a></li>
         </ul>
   </ol>
 </details>
@@ -464,7 +464,7 @@ docker-compose up -d --build
 
 ## Диффузионные модели
 
-### Модель
+### Stable Diffusion v1.5 + LoRA
 
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
