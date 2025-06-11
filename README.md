@@ -91,7 +91,6 @@
 * [![Docker][DockerBadge]][Docker-url]
 * [![Kaggle][Kaggle]][Kaggle-url]
 * [![Python][Python.org]][Python-url]
-  * [![AIOgram][AIOgram]][AIOgram-url]
   * [![Matplotlib][Matplotlib.org]][Matplotlib-url]
   * [![Numpy][Numpy.org]][Numpy-url]
   * [![Pandas][Рandas.pydata.org]][Pandas-url]
@@ -100,10 +99,6 @@
   * [![Spacy][SpaCy]][Spacy-url]
   * [![Seaborn][Seaborn-badge]][Seaborn-url]
   * [![Streamlit][StreamlitBadge]][Streamlit-url]
-  * 
-  * ...
-* [![telegram][telegram]][telegram-url]
-* ...
 
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
