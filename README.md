@@ -485,19 +485,19 @@ docker-compose up -d --build
 **Генерации**. Как правило, до адаптации для генерации логотипов, модель выдавала далёкие от логотипов изображения. Обычно это были реалистичные изображения чего-либо. После адаптации модель уже выдавала нечто смутно напоминающее логотипы, иногда с внедрением отголосков фотореалистичных изображений.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/7f38e181-4e32-4759-9150-9c1213a96244" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели">
+  <img src="https://github.com/user-attachments/assets/7f38e181-4e32-4759-9150-9c1213a96244" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели" width="1000">
   <p><i>Примеры некоторых генераций по запросу **A futuristic logo with glowing lines and abstract shapes** после адаптации модели</i></p>
 </div>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/88d1b316-5794-4d49-80bf-bd4e57280c62" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели">
+  <img src="https://github.com/user-attachments/assets/88d1b316-5794-4d49-80bf-bd4e57280c62" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели" width="1000">
   <p><i>Пример генерации по запросу **A futuristic logo with glowing lines and abstract shapes** до адаптации модели</i></p>
 </div>
 
 Ниже представлена динамика потерь.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/093045fe-5135-4fcc-ab38-8d31f3cce4b0" alt="Потери диффузия"  width="1000">
+  <img src="https://github.com/user-attachments/assets/093045fe-5135-4fcc-ab38-8d31f3cce4b0" alt="Потери диффузия" width="1000">
   <p><i>Потери на валидации и трейне</i></p>
 </div>
 
