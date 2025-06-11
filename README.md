@@ -497,7 +497,7 @@ docker-compose up -d --build
 Ниже представлена динамика потерь.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/d110e814-0719-4d53-a078-649bf3f70b17" alt="Потери диффузия"  width="500">
+  <img src="https://github.com/user-attachments/assets/093045fe-5135-4fcc-ab38-8d31f3cce4b0" alt="Потери диффузия"  width="1000">
   <p><i>Потери на валидации и трейне</i></p>
 </div>
 
