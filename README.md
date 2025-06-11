@@ -490,7 +490,7 @@ docker-compose up -d --build
 </div>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/c7ae4636-c9f3-40e7-9b60-dd04c5cf7860" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели">
+  <img src="https://github.com/user-attachments/assets/88d1b316-5794-4d49-80bf-bd4e57280c62" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели">
   <p><i>Пример генерации по запросу **A futuristic logo with glowing lines and abstract shapes** до адаптации модели</i></p>
 </div>
 
