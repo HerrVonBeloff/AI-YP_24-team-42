@@ -488,21 +488,19 @@ docker-compose up -d --build
   <img src="https://github.com/user-attachments/assets/7f38e181-4e32-4759-9150-9c1213a96244" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели">
   <p><i>Примеры некоторых генераций по запросу **A futuristic logo with glowing lines and abstract shapes** после адаптации модели</i></p>
 </div>
-
-Ниже представлена динамика потерь. 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/c7ae4636-c9f3-40e7-9b60-dd04c5cf7860" alt="Генерация изображений по запросу A futuristic logo with glowing lines and abstract shapes после адаптации модели">
   <p><i>Пример генерации по запросу **A futuristic logo with glowing lines and abstract shapes** до адаптации модели</i></p>
+</div>
+Ниже представлена динамика потерь. 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d110e814-0719-4d53-a078-649bf3f70b17" alt="Потери диффузия"  width="500">
+  <p><i>Потери на валидации и трейне</i></p>
 </div>
 
 **Loss validation**. Колебания от 0.21 до 0.35, нет чёткой нисходящей динамики, наблюдаются скачки (на эпохах 11, 14) — это признак нестабильной генерации. Неплохой, но не идеальный результат. Возможна переобученность или плохая генерализация.
 
 **Average loss train**. Хорошо видно плавное снижение train loss до эпохи 10. После - появляется шум. Это говорит о том, что модель всё же учится, хотя после середины обучающей динамики - возможный выход на плато.
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/d110e814-0719-4d53-a078-649bf3f70b17" alt="Потери диффузия"  width="500">
-  <p><i>Потери на валидации и трейне</i></p>
-</div>
 
 Метрики представлены ниже.
 
