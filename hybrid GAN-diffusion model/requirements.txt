@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+torch
+torchvision
+realesrgan
+basicsr
+diffusers
+streamlit
+Pillow
+opencv-python
+pandas
+matplotlib
+plotly
+wordcloud
+numpy
