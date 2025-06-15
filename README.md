@@ -555,7 +555,8 @@ docker-compose up -d --build
 ### Основные директории
 
 ```
-logo-generator/
+
+hybrid GAN-diffusion model/
 ├── backend/ # Серверная часть
 │ ├── api/ # API endpoints
 │ ├── models/ # Модели ИИ
