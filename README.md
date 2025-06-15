@@ -69,13 +69,39 @@
         <li><a href="#результаты-экспериментов">Результаты экспериментов</a></li>
         </ul>
     <li>
-    <a href="#диффузионные-модели">Диффузионные модели</a>
+    <a href="#использование-диффузионной-модели-и-гибридный-подход">Использование диффузионной модели и гибридный подход</a>
   </li>
+    <ul>
+        <li><a href="#пример-работы">Пример работы</a></li>
+        </ul>
+    <ul>
+        <li><a href="#ограничения">Ограничения</a></li>
+        </ul>
     <ul>
         <li><a href="#stable-diffusion-v15--lora">Stable Diffusion v1.5 + LoRA</a></li>
         </ul>
-  </ol>
+    <li>
+    <a href="#ai-logo-generator-system">AI Logo Generator System</a>
+  </li>
+     <ul>
+        <li><a href="#структура">Структура</a></li>
+        <ul><li><a href="#основные-директории">Основные директории</a></li></ul>
+        </ul>
+    <ul>
+        <li><a href="#технологический-стек">Технологический стек</a></li>
+        </ul>
+    <ul>
+        <li><a href="#быстрый-старт">Быстрый старт</a></li>
+             <ul><li><a href="#установка">Установка</a></li></ul>
+     </ul>
+    <ul>
+        <li><a href="#ключевые-возможности">Ключевые возможности</a></li>
+             <ul><li><a href="#генерация-логотипов">Генерация логотипов</a></li></ul>
+              <ul><li><a href="#особенности-системы">Особенности системы</a></li></ul>
+      </ul>
+    </ol>
 </details>
+
 
 ## Описание проекта
 
@@ -541,14 +567,13 @@ docker-compose up -d --build
 
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
-<!-- Раздел ссылок на сайты и миниатюры -->
-
-
 ## AI Logo Generator System
 
 Генерация логотипов с использованием современных технологий искусственного интеллекта.
 
 !['Black'](https://github.com/HerrVonBeloff/AI-YP_24-team-42/blob/main/hybrid%20GAN-diffusion%20model/11.gif)
+
+<p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
 ##  Структура 
 
@@ -575,6 +600,7 @@ hybrid GAN-diffusion model/
 └── output/ # Результаты генерации
 ```
 
+<p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
 ##  Технологический стек
 
@@ -587,9 +613,13 @@ hybrid GAN-diffusion model/
 | Фронтенд       | Streamlit          | Веб-интерфейс |
 | Аналитика      | Plotly/WordCloud   | Визуализация данных |
 
+
+<p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
+
 ##  Быстрый старт
 
 
+<p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
 ### Установка
 ```bash
@@ -597,8 +627,11 @@ git clone
 cd logo-generator
 pip install -r requirements.txt
 ```
+<p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
 ##  Ключевые возможности
+
+<p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
 ### Генерация логотипов
 1. **Ввод текстового описания** - Просто укажите название и концепцию вашего бренда
